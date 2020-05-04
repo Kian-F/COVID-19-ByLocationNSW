@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.modules.css'
+import { fetchData } from './api';
+import {url} from './api'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+class App extends React.Component{
+
+    state= {
+        data:{}
+        }
+        
+        async componentDidMount(){
+               const fetchedData = fetchData()
+               console.log(fetchedData)
+               this.setState({data: fetchedData})
+        }
+
+
+    render(){
+        return(
+             <div>
+                 <h1>Hi</h1>
+             </div>
+        )
+    }
 }
 
-export default App;
+export  default App;
