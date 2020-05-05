@@ -1,0 +1,10 @@
+body{
+    background-color: lavenderblush;
+
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
